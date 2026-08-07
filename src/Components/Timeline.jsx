@@ -2,8 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Sphere, Torus, Text3D, Center } from "@react-three/drei";
-import * as THREE from "three";
+import { Sphere, Torus } from "@react-three/drei";
 import { 
   SiReact, 
   SiNextdotjs, 
@@ -21,22 +20,12 @@ import {
   SiMysql,
   SiSqlite,
   SiMongoose,
-  SiPython,
-  SiJavascript,
-  SiTypescript
+  SiHostinger,
+  SiCpanel,
 } from "react-icons/si";
-import { 
-  FaServer, 
-  FaDatabase, 
-  FaCloud, 
-  FaCode, 
-  FaRocket,
-  FaBolt,
-  FaCogs,
-  FaChartLine
-} from "react-icons/fa";
+import { FaBolt } from "react-icons/fa";
 
-// Enhanced tech stack with proper icons
+// Enhanced tech stack with solid colors - Black replaced with highlighted colors
 const techStack = {
   frontend: [
     {
@@ -49,9 +38,10 @@ const techStack = {
       glowColor: "#61DAFB40",
       description: "Component-based UI library for modern web applications",
       proficiency: "Expert",
-      projects: 15,
       projectsList: ["E-commerce Platform", "Real-time Dashboard", "Admin Panel"],
-      gradient: "from-cyan-500 to-blue-600"
+      bgColor: "#61DAFB",
+      textColor: "#0A0A0F",
+      borderColor: "#61DAFB"
     },
     {
       name: "Next.js",
@@ -59,13 +49,14 @@ const techStack = {
       months: 18,
       icon: <SiNextdotjs />,
       level: 95,
-      color: "#000000",
-      glowColor: "#00000040",
+      color: "#FFFFFF",
+      glowColor: "#FFFFFF40",
       description: "Full-stack React framework with SSR & static generation",
       proficiency: "Advanced",
-      projects: 12,
       projectsList: ["Portfolio Website", "Blog Platform", "SAAS Application"],
-      gradient: "from-gray-900 to-black"
+      bgColor: "#0070F3", // Vercel Blue
+      textColor: "#FFFFFF",
+      borderColor: "#0070F3"
     },
     {
       name: "Tailwind CSS",
@@ -79,7 +70,9 @@ const techStack = {
       proficiency: "Expert",
       projects: 20,
       projectsList: ["Design Systems", "Responsive Layouts", "Custom Components"],
-      gradient: "from-cyan-400 to-teal-500"
+      bgColor: "#06B6D4",
+      textColor: "#0A0A0F",
+      borderColor: "#06B6D4"
     },
     {
       name: "HTML5",
@@ -93,7 +86,9 @@ const techStack = {
       proficiency: "Expert",
       projects: 25,
       projectsList: ["Web Applications", "Landing Pages", "Email Templates"],
-      gradient: "from-orange-500 to-red-600"
+      bgColor: "#E34F26",
+      textColor: "#FFFFFF",
+      borderColor: "#E34F26"
     },
     {
       name: "CSS3",
@@ -107,7 +102,9 @@ const techStack = {
       proficiency: "Expert",
       projects: 25,
       projectsList: ["Animations", "Flex/Grid Layouts", "Custom Components"],
-      gradient: "from-blue-500 to-indigo-600"
+      bgColor: "#1572B6",
+      textColor: "#FFFFFF",
+      borderColor: "#1572B6"
     },
   ],
   backend: [
@@ -123,7 +120,9 @@ const techStack = {
       proficiency: "Advanced",
       projects: 10,
       projectsList: ["REST APIs", "WebSocket Servers", "Microservices"],
-      gradient: "from-green-500 to-emerald-600"
+      bgColor: "#339933",
+      textColor: "#FFFFFF",
+      borderColor: "#339933"
     },
     {
       name: "Express.js",
@@ -131,13 +130,15 @@ const techStack = {
       months: 24,
       icon: <SiExpress />,
       level: 95,
-      color: "#000000",
-      glowColor: "#00000040",
+      color: "#FFFFFF",
+      glowColor: "#FFFFFF40",
       description: "Minimalist web framework for Node.js applications",
       proficiency: "Advanced",
       projects: 10,
       projectsList: ["API Gateways", "Middleware Systems", "Server Architecture"],
-      gradient: "from-gray-800 to-gray-900"
+      bgColor: "#404040", // Dark Gray
+      textColor: "#FFFFFF",
+      borderColor: "#808080"
     },
     {
       name: "Django",
@@ -151,7 +152,9 @@ const techStack = {
       proficiency: "Advanced",
       projects: 8,
       projectsList: ["Admin Panels", "CRM Systems", "Content Management"],
-      gradient: "from-green-700 to-emerald-900"
+      bgColor: "#44B78B", // Django Green
+      textColor: "#FFFFFF",
+      borderColor: "#44B78B"
     },
     {
       name: "Flask",
@@ -159,29 +162,65 @@ const techStack = {
       months: 12,
       icon: <SiFlask />,
       level: 85,
-      color: "#000000",
-      glowColor: "#00000040",
+      color: "#FFFFFF",
+      glowColor: "#FFFFFF40",
       description: "Lightweight Python web framework for microservices",
       proficiency: "Proficient",
       projects: 6,
       projectsList: ["Prototypes", "Simple APIs", "Quick MVPs"],
-      gradient: "from-gray-600 to-gray-800"
+      bgColor: "#E34F26", // Orange-Red
+      textColor: "#FFFFFF",
+      borderColor: "#E34F26"
     },
   ],
   devops: [
+    {
+      name: "Hostinger",
+      experience: "2 years",
+      months: 24,
+      icon: <SiHostinger />,
+      level: 100,
+      color: "#673DE6",
+      glowColor: "#673DE640",
+      description: "Web hosting platform with integrated deployment tools",
+      proficiency: "Expert",
+      projects: 15,
+      projectsList: ["Web Hosting", "Domain Management", "Deployment Automation"],
+      bgColor: "#673DE6",
+      textColor: "#FFFFFF",
+      borderColor: "#673DE6"
+    },
+    {
+      name: "cPanel",
+      experience: "2 years",
+      months: 24,
+      icon: <SiCpanel />,
+      level: 100,
+      color: "#FF6C2C",
+      glowColor: "#FF6C2C40",
+      description: "Web hosting control panel for server management",
+      proficiency: "Expert",
+      projects: 15,
+      projectsList: ["Server Management", "Domain Configuration", "Email Setup"],
+      bgColor: "#FF6C2C",
+      textColor: "#FFFFFF",
+      borderColor: "#FF6C2C"
+    },
     {
       name: "Vercel",
       experience: "2 years",
       months: 24,
       icon: <SiVercel />,
       level: 100,
-      color: "#000000",
-      glowColor: "#00000040",
+      color: "#FFFFFF",
+      glowColor: "#FFFFFF40",
       description: "Cloud platform for frontend frameworks and static sites",
       proficiency: "Expert",
       projects: 15,
       projectsList: ["Frontend Hosting", "Serverless Functions", "Edge Networks"],
-      gradient: "from-black to-gray-900"
+      bgColor: "#0070F3", // Vercel Blue
+      textColor: "#FFFFFF",
+      borderColor: "#0070F3"
     },
     {
       name: "Firebase",
@@ -195,7 +234,9 @@ const techStack = {
       proficiency: "Advanced",
       projects: 8,
       projectsList: ["Auth Systems", "Real-time DB", "Cloud Functions"],
-      gradient: "from-yellow-500 to-orange-500"
+      bgColor: "#FFCA28",
+      textColor: "#0A0A0F",
+      borderColor: "#FFCA28"
     },
     {
       name: "Render",
@@ -209,7 +250,9 @@ const techStack = {
       projects: 8,
       proficiency: "Advanced",
       projectsList: ["Backend Services", "Web Applications", "Database Hosting"],
-      gradient: "from-teal-400 to-emerald-500"
+      bgColor: "#46E3B7",
+      textColor: "#0A0A0F",
+      borderColor: "#46E3B7"
     },
     {
       name: "Netlify",
@@ -223,7 +266,9 @@ const techStack = {
       proficiency: "Advanced",
       projects: 12,
       projectsList: ["Static Sites", "Form Handling", "CMS Integration"],
-      gradient: "from-cyan-600 to-teal-700"
+      bgColor: "#15847D",
+      textColor: "#FFFFFF",
+      borderColor: "#15847D"
     },
   ],
   database: [
@@ -239,7 +284,9 @@ const techStack = {
       proficiency: "Advanced",
       projects: 10,
       projectsList: ["User Data", "Content Storage", "Real-time Apps"],
-      gradient: "from-green-400 to-lime-500"
+      bgColor: "#47A248",
+      textColor: "#FFFFFF",
+      borderColor: "#47A248"
     },
     {
       name: "MySQL",
@@ -253,7 +300,9 @@ const techStack = {
       proficiency: "Proficient",
       projects: 7,
       projectsList: ["E-commerce", "Analytics", "User Management"],
-      gradient: "from-blue-400 to-cyan-500"
+      bgColor: "#4479A1",
+      textColor: "#FFFFFF",
+      borderColor: "#4479A1"
     },
     {
       name: "SQLite3",
@@ -267,7 +316,9 @@ const techStack = {
       proficiency: "Advanced",
       projects: 8,
       projectsList: ["Mobile Apps", "Desktop Apps", "Prototypes"],
-      gradient: "from-blue-600 to-indigo-700"
+      bgColor: "#003B57",
+      textColor: "#FFFFFF",
+      borderColor: "#003B57"
     },
     {
       name: "Mongoose",
@@ -281,7 +332,9 @@ const techStack = {
       proficiency: "Proficient",
       projects: 8,
       projectsList: ["Data Models", "Schema Design", "ODM Patterns"],
-      gradient: "from-red-700 to-rose-800"
+      bgColor: "#880000",
+      textColor: "#FFFFFF",
+      borderColor: "#880000"
     },
   ],
 };
@@ -308,9 +361,9 @@ const FloatingTechSpheres = ({ activeCategory }) => {
   });
 
   const colors = {
-    frontend: ["#61DAFB", "#000000", "#06B6D4"],
-    backend: ["#339933", "#000000", "#092E20"],
-    devops: ["#000000", "#FFCA28", "#46E3B7"],
+    frontend: ["#61DAFB", "#0070F3", "#06B6D4"],
+    backend: ["#339933", "#404040", "#44B78B"],
+    devops: ["#0070F3", "#FFCA28", "#46E3B7"],
     database: ["#47A248", "#4479A1", "#003B57"]
   };
 
@@ -418,30 +471,30 @@ const Timeline = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#1d1515] relative overflow-hidden">
-      {/* Animated Background Gradient */}
+    <div className="min-h-screen bg-[#0A0A0F] relative overflow-hidden">
+      {/* Premium Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse-slow" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_#06B6D4_0%,_transparent_50%)] opacity-10" />
+        <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_left,_#8B5CF6_0%,_transparent_50%)] opacity-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,_#06B6D4_0%,_transparent_70%)] opacity-5 blur-3xl" />
       </div>
 
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_rgba(120,119,198,0.08)_1px,_transparent_0)] bg-[length:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black,transparent)]" />
+
       {/* 3D Background */}
-      <div className="absolute inset-0 z-0 opacity-30">
+      <div className="absolute inset-0 z-0 opacity-20">
         <Canvas
           camera={{ position: [0, 0, 8], fov: 75 }}
           gl={{ alpha: true, antialias: true }}
         >
-          <color attach="background" args={["#0a0a0f"]} />
+          <color attach="background" args={["#0A0A0F"]} />
           <ambientLight intensity={0.4} />
           <pointLight position={[10, 10, 10]} intensity={1.2} color="#8B5CF6" />
           <pointLight position={[-10, -10, 5]} intensity={0.8} color="#06B6D4" />
           <FloatingTechSpheres activeCategory={activeCategory} />
         </Canvas>
       </div>
-
-      {/* Geometric Pattern Overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_rgba(120,119,198,0.1)_1px,_transparent_0)] bg-[length:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black,transparent)]"></div>
 
       <div className="relative z-10 container mx-auto px-4 py-12">
         <motion.div
@@ -450,57 +503,68 @@ const Timeline = () => {
           variants={containerVariants}
           className="max-w-8xl mx-auto"
         >
-          {/* Enhanced Header */}
+          {/* Premium Header */}
           <motion.div
             className="text-center mb-16 relative"
             variants={cardVariants}
           >
-            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-64 h-64 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-3xl" />
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#06B6D4] opacity-10 rounded-full blur-3xl" />
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#8B5CF6] opacity-10 rounded-full blur-3xl translate-x-40" />
             
-            <div className="relative inline-block">
-              <h1 className="text-3xl md:text-5xl font-bold mb-6 nav">Full Stack
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 mt-2 mx-5">
-              Development Skills
-            </span>
-          </h1>
-              <div className="h-1 w-32 mx-auto bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full mb-6" />
-              
-              <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed font-medium text">
-                Expertise Across <span className="text-cyan-400 font-bold">4 Domains</span> with <span className="text-purple-400 font-bold">20+ Technologies</span> and <span className="text-blue-400 font-bold">100+ Projects</span>
+            <div className="relative">
+              <div className="text-center mb-20">
+          <div className="inline-flex items-center px-8 py-4 backdrop-blur-2xl rounded-2xl border mb-8"
+          style={{
+            backgroundColor: "#1A1A2E",
+            borderColor: "rgba(255,255,255,0.05)"
+          }}>
+            <div className="w-3 h-3 rounded-full mr-4 animate-pulse" style={{ backgroundColor: "#6366F1" }} />
+            <h1 className="text-4xl md:text-5xl font-bold text-white nav">
+              Skills
+            </h1>
+            <div className="w-3 h-3 rounded-full ml-4 animate-pulse" style={{ backgroundColor: "#10B981" }} />
+          </div>
+          <p className="text-gray-200 text-sm max-w-4xl mx-auto mb-8 text">
+                Explore my comprehensive technology stack across frontend, backend, 
+                DevOps, and database technologies.
               </p>
+        </div>
+              
               
               {/* Quick Stats */}
-              <div className="flex justify-center gap-6 mt-8">
+              <div className="flex flex-wrap justify-center gap-4">
                 {Object.entries(techStack).map(([category, techs]) => (
                   <motion.div
                     key={category}
-                    whileHover={{ scale: 1.05 }}
-                    className="flex items-center gap-2 bg-[#4a290363] backdrop-blur-lg rounded-full px-4 py-2 border border-white/10"
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    className="flex items-center gap-3 bg-[#1A1A2E]/80 backdrop-blur-xl rounded-xl px-5 py-3 border border-white/5 hover:border-[#06B6D4]/30 transition-all duration-300 group"
                   >
-                    <span className="text-lg text">{getCategoryIcon(category)}</span>
-                    <span className="text-sm text-gray-300 capitalize text">{category}</span>
-                    <span className="text-sm font-bold text-white bg-gradient-to-r from-blue-500 to-purple-500 px-2 py-0.5 rounded-full text">
-                      {techs.length}
-                    </span>
+                    <span className="text-xl">{getCategoryIcon(category)}</span>
+                    <div className="text-left">
+                      <span className="text-sm text-gray-200 capitalize content">{category}</span>
+                      <span className="block text-md font-bold text-white head">
+                        {techs.length} {techs.length === 1 ? 'Tech' : 'Technologies'}
+                      </span>
+                    </div>
                   </motion.div>
                 ))}
               </div>
             </div>
           </motion.div>
 
-          {/* Main Content Grid - Perfectly Aligned */}
+          {/* Main Content Grid */}
           <div className="grid xl:grid-cols-3 gap-8 items-start">
             {/* Left Column - Tech Stack Cards */}
             <motion.div
               className="xl:col-span-2 space-y-8"
               variants={containerVariants}
             >
-              {/* Category Navigation */}
+              {/* Category Navigation - Premium Tabs */}
               <motion.div
                 className="relative"
                 variants={cardVariants}
               >
-                <div className="flex flex-wrap gap-2 mb-8 p-2 bg-[#4a290363] backdrop-blur-xl rounded-2xl border border-slate-700/50 text">
+                <div className="flex flex-wrap gap-2 p-1.5 bg-[#1A1A2E]/80 backdrop-blur-xl rounded-2xl border border-white/5">
                   {Object.keys(techStack).map((category) => (
                     <motion.button
                       key={category}
@@ -508,9 +572,9 @@ const Timeline = () => {
                         setActiveCategory(category);
                         setSelectedTech(techStack[category][0]);
                       }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className={`relative px-6 py-3 rounded-xl font-bold text-xs uppercase transition-all duration-300 flex items-center gap-2 ${
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className={`relative px-5 py-2.5 rounded-xl font-bold text-xs uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
                         activeCategory === category
                           ? "text-white"
                           : "text-gray-400 hover:text-white"
@@ -519,22 +583,25 @@ const Timeline = () => {
                       {activeCategory === category && (
                         <motion.div
                           layoutId="activeCategory"
-                          className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-600/20 rounded-xl"
+                          className="absolute inset-0 bg-[#06B6D4]/20 rounded-xl border border-[#06B6D4]/30"
                           transition={{ type: "spring", bounce: 0.2 }}
                         />
                       )}
-                      <span className="relative z-10 flex items-center gap-2">
-                        <span className="text-lg">
+                      <span className="relative z-10 flex items-center gap-2 blog">
+                        <span className="text-base">
                           {getCategoryIcon(category)}
                         </span>
                         {category}
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/60">
+                          {techStack[category].length}
+                        </span>
                       </span>
                     </motion.button>
                   ))}
                 </div>
               </motion.div>
 
-              {/* Tech Cards Grid - Enhanced Design */}
+              {/* Tech Cards Grid - Premium Design with Solid Colors */}
               <motion.div
                 layout
                 className="grid grid-cols-1 md:grid-cols-2 gap-6"
@@ -548,61 +615,55 @@ const Timeline = () => {
                       animate="visible"
                       exit="hidden"
                       variants={cardVariants}
-                      whileHover="hover"
+                      whileHover={{ y: -4 }}
                       onMouseEnter={() => setHoveredCard(index)}
                       onMouseLeave={() => setHoveredCard(null)}
                       onClick={() => setSelectedTech(tech)}
                       custom={index}
                       className="relative group cursor-pointer"
                     >
-                      {/* Card Container */}
                       <motion.div
-                        variants={{
-                          hidden: { opacity: 0, y: 20, scale: 0.95 },
-                          visible: {
-                            opacity: 1,
-                            y: 0,
-                            scale: 1,
-                            transition: { 
-                              delay: index * 0.1,
-                              duration: 0.6 
-                            }
-                          },
-                          hover: {
-                            y: -5,
-                            scale: 1.02,
-                            transition: { duration: 0.3 }
-                          }
+                        className="relative bg-[#1A1A2E] backdrop-blur-xl rounded-2xl p-6 border border-white/5 hover:border-opacity-100 overflow-hidden h-full transition-all duration-300"
+                        style={{
+                          borderColor: hoveredCard === index ? tech.borderColor : 'rgba(255,255,255,0.05)',
+                          boxShadow: hoveredCard === index ? `0 8px 32px ${tech.borderColor}20` : 'none'
                         }}
-                        className="relative bg-[#4a290363] backdrop-blur-2xl rounded-2xl p-6 border border-slate-700/50 overflow-hidden h-full"
                       >
-                        {/* Gradient Border Effect */}
-                        <div className={`absolute inset-0 bg-gradient-to-br ${tech.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`} />
+                        {/* Hover Glow Effect */}
+                        <div 
+                          className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"
+                          style={{ backgroundColor: tech.bgColor }}
+                        />
                         
-                        {/* Tech Header */}
                         <div className="relative z-10">
                           <div className="flex items-start justify-between mb-4">
                             <div className="flex items-start gap-3">
                               <motion.div
                                 variants={floatingVariants}
                                 animate="float"
-                                className={`text-3xl p-3 rounded-xl bg-gradient-to-br ${tech.gradient} text-white`}
+                                className="text-3xl p-3 rounded-xl"
+                                style={{ 
+                                  backgroundColor: tech.bgColor,
+                                  color: tech.textColor
+                                }}
                               >
                                 {tech.icon}
                               </motion.div>
                               <div>
-                                <h3 className="text-lg nav font-bold text-white">
+                                <h3 className="text-lg font-bold text-white head">
                                   {tech.name}
                                 </h3>
                                 <div className="flex items-center gap-2 mt-1">
-                                  <span className={`px-2 py-0.5 rounded-full text-xs font-bold text ${
-                                    tech.proficiency === 'Expert' ? 'bg-green-500/20 text-green-400' :
-                                    tech.proficiency === 'Advanced' ? 'bg-blue-500/20 text-blue-400' :
-                                    'bg-purple-500/20 text-purple-400 text'
-                                  }`}>
+                                  <span 
+                                    className="px-2 py-0.5 rounded-full text-xs font-bold"
+                                    style={{
+                                      backgroundColor: `${tech.bgColor}20`,
+                                      color: tech.bgColor
+                                    }}
+                                  >
                                     {tech.proficiency}
                                   </span>
-                                  <span className="text-xs text-gray-400 text">
+                                  <span className="text-xs text-gray-400">
                                     {tech.experience}
                                   </span>
                                 </div>
@@ -610,19 +671,19 @@ const Timeline = () => {
                             </div>
                             <motion.div
                               animate={{ 
-                                scale: hoveredCard === index ? 1.2 : 1,
-                                rotate: hoveredCard === index ? 360 : 0 
+                                scale: hoveredCard === index ? 1.1 : 1,
                               }}
                               transition={{ duration: 0.3 }}
-                              className={`text-2xl font-black bg-gradient-to-r ${tech.gradient} bg-clip-text text-transparent text`}
+                              className="text-2xl font-black text"
+                              style={{ color: tech.bgColor }}
                             >
                               {tech.level}%
                             </motion.div>
                           </div>
 
-                          {/* Progress Bar */}
+                          {/* Progress Bar - Solid Color */}
                           <div className="mb-4">
-                            <div className="w-full bg-slate-700/30 rounded-full h-2 overflow-hidden relative">
+                            <div className="w-full bg-white/5 rounded-full h-2 overflow-hidden">
                               <motion.div
                                 initial={{ width: 0 }}
                                 animate={{ width: `${tech.level}%` }}
@@ -631,31 +692,35 @@ const Timeline = () => {
                                   delay: index * 0.2,
                                   ease: "easeOut"
                                 }}
-                                className={`h-2 rounded-full bg-gradient-to-r ${tech.gradient}`}
+                                className="h-2 rounded-full"
+                                style={{ backgroundColor: tech.bgColor }}
                               />
                             </div>
                           </div>
 
-                          {/* Description */}
-                          <p className="text-gray-300 text-xs mb-4 line-clamp-2 text">
+                          <p className="text-gray-300 text-xs mb-4 line-clamp-2">
                             {tech.description}
                           </p>
-                          
-                          {/* Footer */}
-                          <div className="flex items-center justify-between pt-4 border-t border-slate-700/50">
-                            <div className="flex items-center gap-2">
-                              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                              <span className="text-xs text-gray-400 text">
-                                {tech.projects}+ projects
+
+                          {/* Project Tags */}
+                          <div className="flex flex-wrap gap-1.5">
+                            {tech.projectsList.slice(0, 2).map((project, i) => (
+                              <span 
+                                key={i}
+                                className="px-2 py-0.5 rounded text-[10px]"
+                                style={{
+                                  backgroundColor: `${tech.bgColor}15`,
+                                  color: tech.bgColor
+                                }}
+                              >
+                                {project}
                               </span>
-                            </div>
-                            <motion.div
-                              whileHover={{ x: 5 }}
-                              className="text-sm font-medium text-blue-400 flex items-center gap-1 blog"
-                            >
-                              View Details
-                              <span className="text-lg">→</span>
-                            </motion.div>
+                            ))}
+                            {tech.projectsList.length > 2 && (
+                              <span className="px-2 py-0.5 rounded text-[10px] bg-white/5 text-gray-400">
+                                +{tech.projectsList.length - 2}
+                              </span>
+                            )}
                           </div>
                         </div>
                       </motion.div>
@@ -665,70 +730,87 @@ const Timeline = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Column - Tech Details & Timeline */}
+            {/* Right Column - Tech Details */}
             <motion.div className="space-y-8" variants={containerVariants}>
-              {/* Selected Tech Spotlight */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="bg-[#4a290363] backdrop-blur-2xl rounded-2xl p-6 border border-slate-700/50 h-fit"
+                className="bg-[#1A1A2E]/80 backdrop-blur-xl rounded-2xl p-6 border border-white/5 sticky top-4"
               >
                 <div className="flex items-center gap-4 mb-6">
                   <motion.div
                     animate={{
-                      scale: [1, 1.1, 1],
-                      rotate: [0, 10, 0],
+                      scale: [1, 1.05, 1],
+                      rotate: [0, 5, 0],
                     }}
                     transition={{
                       duration: 3,
                       repeat: Infinity,
                       repeatType: "loop",
                     }}
-                    className={`text-4xl p-3 rounded-xl bg-gradient-to-br ${selectedTech.gradient} text-white`}
+                    className="text-4xl p-4 rounded-xl"
+                    style={{ 
+                      backgroundColor: selectedTech.bgColor,
+                      color: selectedTech.textColor
+                    }}
                   >
                     {selectedTech.icon}
                   </motion.div>
                   <div className="flex-1">
-                    <h2 className="text-lg font-bold text-white nav">
+                    <h2 className="text-xl font-bold text-white blog">
                       {selectedTech.name}
                     </h2>
                     <div className="flex items-center gap-2 mt-1">
-                      <span className="text-sm text-gray-400 text">
+                      <span 
+                        className="text-sm px-2 py-0.5 rounded-full"
+                        style={{
+                          backgroundColor: `${selectedTech.bgColor}20`,
+                          color: selectedTech.bgColor
+                        }}
+                      >
                         {selectedTech.proficiency}
                       </span>
-                      <span className="text-sm font-bold px-2 py-0.5 rounded-full bg-slate-700/50 text">
+                      <span className="text-sm text-gray-400">
                         {selectedTech.experience}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                {/* Stats Grid */}
+                {/* Stats */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="bg-amber-950 rounded-xl p-4">
-                    <div className="text-sm text-gray-400 mb-1 text">Mastery</div>
-                    <div className={`text-2xl font-bold bg-gradient-to-r text ${selectedTech.gradient} bg-clip-text text-transparent`}>
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <div className="text-sm text-gray-400 mb-1">Mastery Level</div>
+                    <div 
+                      className="text-2xl font-bold nav"
+                      style={{ color: selectedTech.bgColor }}
+                    >
                       {selectedTech.level}%
                     </div>
                   </div>
-                  <div className="bg-orange-900 rounded-xl p-4">
-                    <div className="text-sm text-gray-400 mb-1 text">Projects</div>
+                  <div className="bg-white/5 rounded-xl p-4">
+                    <div className="text-sm text-gray-400 mb-1">Experience</div>
                     <div className="text-2xl font-bold text-white text">
-                      {selectedTech.projects}+
+                      {selectedTech.months}Month
                     </div>
                   </div>
                 </div>
 
-                {/* Project Samples */}
+                {/* Projects */}
                 <div className="mb-6">
-                  <h3 className="text-sm text-gray-400 mb-3 text">Project Examples</h3>
+                  <h3 className="text-sm text-gray-400 mb-3">Project Examples</h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedTech.projectsList.map((project, i) => (
                       <motion.span
                         key={i}
                         whileHover={{ scale: 1.05 }}
-                        className="px-3 py-1.5 rounded-lg text-xs bg-slate-800/50 text-gray-300 border border-slate-700/50 main head"
+                        className="px-3 py-1.5 rounded-lg text-xs border transition-all duration-300"
+                        style={{
+                          backgroundColor: `${selectedTech.bgColor}10`,
+                          borderColor: `${selectedTech.bgColor}30`,
+                          color: selectedTech.bgColor
+                        }}
                       >
                         {project}
                       </motion.span>
@@ -736,21 +818,27 @@ const Timeline = () => {
                   </div>
                 </div>
 
-                {/* Description */}
-                <p className="text-gray-300 text-sm content">
+                <p className="text-gray-300 text-sm leading-relaxed">
                   {selectedTech.description}
                 </p>
+
+                {/* Tech Highlights */}
+                <div className="mt-6 pt-6 border-t border-white/5">
+                  <div className="flex items-center gap-2 text-xs text-gray-400">
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: selectedTech.bgColor }} />
+                    <span>Click on any tech card to explore details</span>
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
           </div>
         </motion.div>
       </div>
 
-      {/* Add custom animations */}
       <style jsx global>{`
         @keyframes pulse-slow {
-          0%, 100% { opacity: 0.5; }
-          50% { opacity: 1; }
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.6; }
         }
         .animate-pulse-slow {
           animation: pulse-slow 4s ease-in-out infinite;
@@ -762,17 +850,19 @@ const Timeline = () => {
           overflow: hidden;
         }
         
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
           width: 8px;
         }
         ::-webkit-scrollbar-track {
-          background: rgba(30, 41, 59, 0.4);
+          background: rgba(26, 26, 46, 0.4);
           border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb {
-          background: linear-gradient(to bottom, #06B6D4, #8B5CF6);
+          background: #06B6D4;
           border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #8B5CF6;
         }
       `}</style>
     </div>

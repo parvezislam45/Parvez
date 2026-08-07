@@ -72,7 +72,7 @@ const Banner = () => {
   };
 
   return (
-    <section className="min-h-[80vh] bg-[#1d1515] relative overflow-hidden pt-20">
+    <section className="min-h-[80vh] bg-[#0A0A0F] relative overflow-hidden pt-20">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
@@ -97,7 +97,7 @@ const Banner = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 py-12 relative z-10 bg-[#1d1515]">
+      <div className="container mx-auto px-6 py-12 relative z-10 bg-[#0A0A0F]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[70vh]">
           {/* Left Content */}
           <div className="space-y-6">
@@ -248,7 +248,7 @@ const Banner = () => {
             <div className="relative">
               {/* Main Image Container */}
               <motion.div
-                className="relative w-full h-80 rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl"
+                className="relative w-full h-96 rounded-3xl overflow-hidden border-2 border-white/20 shadow-2xl"
                 animate={{
                   y: [-5, 5, -5],
                 }}
@@ -260,7 +260,7 @@ const Banner = () => {
               >
                 <img
                   className="w-full h-full"
-                  src="https://i.postimg.cc/pXH4VXVx/4U5A5743.jpg"
+                  src="Images/my.png"
                   alt=""
                 />
 
@@ -298,7 +298,7 @@ const Banner = () => {
                   ease: "easeInOut",
                 }}
               >
-                <span className="text-black text-sm font-bold text">2+ Years</span>
+                <span className="text-black text-sm font-bold text">3+ Years</span>
               </motion.div>
 
               <motion.div
@@ -314,7 +314,7 @@ const Banner = () => {
                 }}
               >
                 <span className="text-white text-sm font-bold">
-                  50+ Projects
+                  20+ Projects
                 </span>
               </motion.div>
             </div>

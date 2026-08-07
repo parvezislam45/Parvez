@@ -26,7 +26,7 @@ const Services = () => {
     {
       id: 4,
       title: "Cloud Deployment",
-      description: "Deploying and managing applications on AWS, Vercel, and other cloud platforms with CI/CD pipelines.",
+      description: "Deploying and managing applications on Hoistinger,C-Panel, AWS, Vercel, and other cloud platforms with CI/CD pipelines.",
       icon: "☁️",
       gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)"
     }
@@ -47,40 +47,45 @@ const Services = () => {
       </div>
 
       <div className="relative max-w-6xl mx-auto">
+         <div
+            className="text-center mb-16 relative"
+          >
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#06B6D4] opacity-10 rounded-full blur-3xl" />
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#8B5CF6] opacity-10 rounded-full blur-3xl translate-x-40" />
+            
+            <div className="relative">
+              <div className="text-center mb-20">
+          <div className="inline-flex items-center px-8 py-4 backdrop-blur-2xl rounded-2xl border mb-8"
+          style={{
+            backgroundColor: "#1A1A2E",
+            borderColor: "rgba(255,255,255,0.05)"
+          }}>
+            <div className="w-3 h-3 rounded-full mr-4 animate-pulse" style={{ backgroundColor: "#6366F1" }} />
+            <h1 className="text-4xl md:text-5xl font-bold text-white nav">
+              Professional Services
+            </h1>
+            <div className="w-3 h-3 rounded-full ml-4 animate-pulse" style={{ backgroundColor: "#10B981" }} />
+          </div>
+          <p className="text-gray-200 text-sm max-w-4xl mx-auto mb-8 text">
+                Transforming Your Vision Into High-Performance Digital Solutions with Cutting-Edge Technologies
+              </p>
+        </div>
+            </div>
+          </div>
         {/* Redesigned Header */}
         <div className="mb-20 text-center">
-          <div className="inline-block relative mb-8">
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur opacity-30 rounded-lg"></div>
-            <span className="relative text-sm font-semibold tracking-widest text-purple-300 uppercase px-4 py-2">
-              Professional Services
-            </span>
-          </div>
-          
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 nav">MY
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 mt-2 mx-5">
-              SERVICES
-            </span>
-          </h1>
-          
-          <div className="max-w-4xl mx-auto">
-            <p className="text-md text-gray-400 text">
-              Transforming Your Vision Into High-Performance Digital Solutions with Cutting-Edge Technologies
-            </p>
-          </div>
-          
-          {/* Stats Row */}
-          <div className="flex flex-wrap justify-center gap-8 mt-12">
+          <div className="flex flex-wrap justify-center gap-8 mt-5">
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">20+</div>
-              <div className="text-sm text-gray-500">Projects Delivered</div>
+              <div className="text-3xl font-bold text-white nav">20+</div>
+              <div className="text-sm text-gray-200 text">Projects Delivered</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">100%</div>
-              <div className="text-sm text-gray-500">Client Satisfaction</div>
+              <div className="text-3xl font-bold text-white nav">100%</div>
+              <div className="text-sm text-gray-200 text">Client Satisfaction</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-white">24/7</div>
-              <div className="text-sm text-gray-500">Support Available</div>
+              <div className="text-3xl font-bold text-white nav">24/7</div>
+              <div className="text-sm text-gray-200 text">Support Available</div>
             </div>
           </div>
         </div>
@@ -125,11 +130,11 @@ const Services = () => {
                     </div>
                     
                     {/* Content */}
-                    <h3 className="text-2xl font-bold text-white mb-4">
+                    <h3 className="text-2xl font-bold text-white mb-4 blog">
                       {service.title}
                     </h3>
                     
-                    <p className="text-gray-400 mb-6">
+                    <p className="text-gray-200 mb-6 text text-sm">
                       {service.description}
                     </p>
                     
@@ -151,16 +156,16 @@ const Services = () => {
                       )}
                       {service.title.includes("API") && (
                         <>
-                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-cyan-900/30 text-cyan-300 border border-cyan-700/30">REST API</span>
-                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-indigo-900/30 text-indigo-300 border border-indigo-700/30">GraphQL</span>
+                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-cyan-900/30 text-cyan-300 border border-cyan-700/30">Rest Api</span>
+                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-indigo-900/30 text-indigo-300 border border-indigo-700/30">Flask</span>
                           <span className="px-3 py-1 text-xs font-medium rounded-full bg-gray-800 text-gray-300 border border-gray-700">Express.js</span>
                         </>
                       )}
                       {service.title.includes("Cloud") && (
                         <>
-                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-emerald-900/30 text-emerald-300 border border-emerald-700/30">AWS</span>
+                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-emerald-900/30 text-emerald-300 border border-emerald-700/30">Hoistinger</span>
                           <span className="px-3 py-1 text-xs font-medium rounded-full bg-blue-900/30 text-blue-300 border border-blue-700/30">Vercel</span>
-                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-gray-800 text-gray-300 border border-gray-700">CI/CD</span>
+                          <span className="px-3 py-1 text-xs font-medium rounded-full bg-gray-800 text-gray-300 border border-gray-700">C-Panel</span>
                         </>
                       )}
                     </div>
@@ -183,14 +188,11 @@ const Services = () => {
         <div className="mt-32">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              <span className="bg-gradient-to-r from-gray-300 to-gray-500 bg-clip-text text-transparent">
-                Additional
-              </span>{" "}
-              <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Capabilities
+              <span className="text-white nav">
+                Additional Capabilities
               </span>
             </h2>
-            <p className="text-gray-400">Comprehensive digital solutions beyond core services</p>
+            <p className="text-gray-200 blog">Comprehensive digital solutions beyond core services</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -203,31 +205,11 @@ const Services = () => {
                 key={index}
                 className="bg-gradient-to-br from-gray-900/50 to-black/50 border border-gray-800 rounded-xl p-6 text-center group hover:border-gray-700 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="text-3xl mb-4">{item.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-500 text-sm">{item.desc}</p>
+                <h3 className="text-lg font-semibold text-white mb-2 head">{item.title}</h3>
+                <p className="text-gray-200 text-xs text">{item.desc}</p>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* CTA */}
-        <div className="mt-20 text-center">
-          <div className="relative inline-block group">
-            {/* Animated background glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur opacity-0 group-hover:opacity-75 transition-opacity duration-500"></div>
-            
-            <button className="relative bg-gradient-to-r from-gray-900 to-black border border-gray-800 rounded-full px-12 py-4 text-lg font-semibold hover:border-gray-700 transition-all duration-300 group">
-              <span className="text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400">
-                Start Your Project
-              </span>
-              <span className="ml-3 text-purple-400 group-hover:translate-x-2 group-hover:text-pink-400 transition-all duration-300">→</span>
-            </button>
-          </div>
-          
-          <p className="text-gray-500 mt-6 text-sm">
-            Let's build something exceptional together
-          </p>
         </div>
       </div>
 

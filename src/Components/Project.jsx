@@ -64,7 +64,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <MdRestaurant className="text-[#b78aff]" />,
+      icon: <MdRestaurant className="text-2xl" style={{ color: '#A855F7' }} />,
     },
     {
       id: 2,
@@ -79,7 +79,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <FaMosque className="text-[#8ad4e6]" />,
+      icon: <FaMosque className="text-2xl" style={{ color: '#A855F7' }} />,
       privateRepo: true,
     },
     {
@@ -95,7 +95,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <MdInventory className="text-[#f5c27b]" />,
+      icon: <MdInventory className="text-2xl" style={{ color: '#A855F7' }} />,
       privateRepo: true,
     },
     {
@@ -111,7 +111,7 @@ const Projects = ({ setActiveSection }) => {
       featured: false,
       status: "Live",
       completion: "100%",
-      icon: <MdStore className="text-[#8ad4e6]" />,
+      icon: <MdStore className="text-2xl" style={{ color: '#A855F7' }} />,
       privateRepo: true,
     },
     {
@@ -127,7 +127,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <MdTrendingUp className="text-[#f3a0b5]" />,
+      icon: <MdTrendingUp className="text-2xl" style={{ color: '#A855F7' }} />,
     },
     {
       id: 6,
@@ -142,7 +142,7 @@ const Projects = ({ setActiveSection }) => {
       featured: false,
       status: "Live",
       completion: "100%",
-      icon: <FiGlobe className="text-[#8ad4e6]" />,
+      icon: <FiGlobe className="text-2xl" style={{ color: '#A855F7' }} />,
     },
     {
       id: 7,
@@ -157,7 +157,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <TbBuildingSkyscraper className="text-[#b78aff]" />,
+      icon: <TbBuildingSkyscraper className="text-2xl" style={{ color: '#A855F7' }} />,
       privateRepo: true,
     },
     {
@@ -173,7 +173,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <FiCode className="text-[#f5c27b]" />,
+      icon: <FiCode className="text-2xl" style={{ color: '#A855F7' }} />,
     },
     {
       id: 9,
@@ -188,7 +188,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <FiUsers className="text-[#f3a0b5]" />,
+      icon: <FiUsers className="text-2xl" style={{ color: '#A855F7' }} />,
       backendOnly: true,
     },
     {
@@ -204,7 +204,7 @@ const Projects = ({ setActiveSection }) => {
       featured: false,
       status: "Live",
       completion: "100%",
-      icon: <FiGlobe className="text-[#8ad4e6]" />,
+      icon: <FiGlobe className="text-2xl" style={{ color: '#A855F7' }} />,
       backendOnly: true,
     },
     {
@@ -220,7 +220,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <MdStore className="text-[#f5c27b]" />,
+      icon: <MdStore className="text-2xl" style={{ color: '#A855F7' }} />,
     },
     {
       id: 12,
@@ -235,7 +235,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <BsBank className="text-[#8ad4e6]" />,
+      icon: <BsBank className="text-2xl" style={{ color: '#A855F7' }} />,
     },
     {
       id: 13,
@@ -250,7 +250,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <BsChatDots className="text-[#f3a0b5]" />,
+      icon: <BsChatDots className="text-2xl" style={{ color: '#A855F7' }} />,
       privateRepo: true,
     },
     {
@@ -266,22 +266,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Development",
       completion: "75%",
-      icon: <FaHospital className="text-[#f3a0b5]" />,
-    },
-    {
-      id: 15,
-      title: "Metro Solver",
-      shortDescription: "Public transportation route optimization",
-      description: `Intelligent transportation system for optimizing metro routes, schedules, and passenger flow with real-time tracking.`,
-      fullDescription: `Features include route planning, real-time information, ticketing system, passenger information, analytics, and admin dashboard.`,
-      category: "nextjs",
-      technologies: ["Next.js", "TypeScript"],
-      liveUrl: "https://metro-gamma-liard.vercel.app/",
-      githubUrl: "https://github.com/parvezislam45/metro",
-      featured: true,
-      status: "Development",
-      completion: "60%",
-      icon: <FiGlobe className="text-[#8ad4e6]" />,
+      icon: <FaHospital className="text-2xl" style={{ color: '#A855F7' }} />,
     },
     {
       id: 16,
@@ -296,7 +281,7 @@ const Projects = ({ setActiveSection }) => {
       featured: true,
       status: "Live",
       completion: "100%",
-      icon: <MdGames className="text-[#f5c27b]" />,
+      icon: <MdGames className="text-2xl" style={{ color: '#A855F7' }} />,
     },
   ];
 
@@ -315,34 +300,56 @@ const Projects = ({ setActiveSection }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+        style={{ backgroundColor: 'rgba(0,0,0,0.9)' }}
         onClick={onClose}
       >
         <motion.div
           initial={{ scale: 0.9, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
-          className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0f0d0d] rounded-3xl border border-[#2a2424] shadow-2xl"
+          className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl border"
+          style={{
+            backgroundColor: '#1A1A2E',
+            borderColor: 'rgba(168,85,247,0.1)'
+          }}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="sticky top-0 z-10 p-6 bg-[#0f0d0d]/95 backdrop-blur-sm border-b border-[#2a2424]">
+          <div className="sticky top-0 z-10 p-6 backdrop-blur-sm border-b"
+            style={{
+              backgroundColor: '#1A1A2E',
+              borderColor: 'rgba(255,255,255,0.05)'
+            }}
+          >
             <div className="flex items-start justify-between">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-2xl bg-[#1a1616] border border-[#2a2424]">
+                <div className="p-3 rounded-2xl border"
+                  style={{
+                    backgroundColor: '#0A0A0F',
+                    borderColor: 'rgba(255,255,255,0.05)'
+                  }}
+                >
                   {project.icon}
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white tracking-tight">{project.title}</h3>
                   <div className="flex items-center gap-3 mt-2 flex-wrap">
-                    <span className={`px-3 py-1.5 rounded-xl text-xs font-semibold ${
-                      project.status === 'Live' ? 'bg-emerald-900/40 text-emerald-300 border border-emerald-700/30' :
-                      project.status === 'Beta' ? 'bg-amber-900/40 text-amber-300 border border-amber-700/30' :
-                      project.status === 'Development' ? 'bg-blue-900/40 text-blue-300 border border-blue-700/30' :
-                      'bg-gray-800/40 text-gray-300 border border-gray-700/30'
-                    }`}>
+                    <span className="px-3 py-1.5 rounded-xl text-xs font-semibold"
+                      style={{
+                        backgroundColor: project.status === 'Live' ? 'rgba(16,185,129,0.15)' : 'rgba(59,130,246,0.15)',
+                        color: project.status === 'Live' ? '#34D399' : '#60A5FA',
+                        border: `1px solid ${project.status === 'Live' ? 'rgba(16,185,129,0.2)' : 'rgba(59,130,246,0.2)'}`
+                      }}
+                    >
                       {project.status}
                     </span>
-                    <span className="px-3 py-1.5 bg-[#1a1616] rounded-xl text-xs text-[#9a8f8f] border border-[#2a2424]">
+                    <span className="px-3 py-1.5 rounded-xl text-xs"
+                      style={{
+                        backgroundColor: '#0A0A0F',
+                        color: '#9CA3AF',
+                        border: '1px solid rgba(255,255,255,0.05)'
+                      }}
+                    >
                       {categories.find(c => c.id === project.category)?.name}
                     </span>
                   </div>
@@ -350,9 +357,10 @@ const Projects = ({ setActiveSection }) => {
               </div>
               <button
                 onClick={onClose}
-                className="p-2 hover:bg-[#2a2424] rounded-full transition-colors"
+                className="p-2 rounded-full transition-colors hover:bg-white/5"
+                style={{ color: '#9CA3AF' }}
               >
-                <span className="text-2xl text-[#9a8f8f] hover:text-white">×</span>
+                <span className="text-2xl hover:text-white">×</span>
               </button>
             </div>
           </div>
@@ -364,37 +372,66 @@ const Projects = ({ setActiveSection }) => {
                 alt={project.title}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0f0d0d] via-transparent to-transparent"></div>
+              <div className="absolute inset-0"
+                style={{
+                  background: 'linear-gradient(to top, #1A1A2E, transparent)'
+                }}
+              />
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-[#b78aff] uppercase tracking-wider mb-2">Overview</h4>
-              <p className="text-[#c4b8b8] leading-relaxed">{project.description}</p>
+              <h4 className="text-sm font-semibold uppercase tracking-wider mb-2"
+                style={{ color: '#A855F7' }}
+              >
+                Overview
+              </h4>
+              <p className="text-gray-300 leading-relaxed">{project.description}</p>
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-[#b78aff] uppercase tracking-wider mb-3">Key Features</h4>
-              <div className="bg-[#1a1616] p-4 rounded-2xl border border-[#2a2424]">
-                <pre className="whitespace-pre-wrap font-sans text-[#c4b8b8] text-sm leading-relaxed">
+              <h4 className="text-sm font-semibold uppercase tracking-wider mb-3"
+                style={{ color: '#A855F7' }}
+              >
+                Key Features
+              </h4>
+              <div className="p-4 rounded-2xl border"
+                style={{
+                  backgroundColor: '#0A0A0F',
+                  borderColor: 'rgba(255,255,255,0.05)'
+                }}
+              >
+                <pre className="whitespace-pre-wrap font-sans text-gray-300 text-sm leading-relaxed">
                   {project.fullDescription}
                 </pre>
               </div>
             </div>
 
             <div>
-              <h4 className="text-sm font-semibold text-[#b78aff] uppercase tracking-wider mb-3">Technologies</h4>
+              <h4 className="text-sm font-semibold uppercase tracking-wider mb-3"
+                style={{ color: '#A855F7' }}
+              >
+                Technologies
+              </h4>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-[#1a1616] rounded-xl text-[#d4cccc] border border-[#2a2424] text-sm"
+                    className="px-4 py-2 rounded-xl text-sm border"
+                    style={{
+                      backgroundColor: '#0A0A0F',
+                      color: '#D1D5DB',
+                      borderColor: 'rgba(255,255,255,0.05)'
+                    }}
                   >
                     {tech}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="flex flex-wrap gap-4 pt-6 border-t border-[#2a2424]">
+
+            <div className="flex flex-wrap gap-4 pt-6 border-t"
+              style={{ borderColor: 'rgba(255,255,255,0.05)' }}
+            >
               {!isBackendOnly ? (
                 <motion.a
                   whileHover={{ scale: 1.02 }}
@@ -402,13 +439,20 @@ const Projects = ({ setActiveSection }) => {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#6d4aff] text-white py-3.5 rounded-2xl font-semibold hover:bg-[#5a3ddb] transition-all duration-300"
+                  className="flex-1 flex items-center justify-center gap-2 text-white py-3.5 rounded-2xl font-semibold transition-all duration-300"
+                  style={{ backgroundColor: '#A855F7' }}
                 >
                   <FiExternalLink />
                   Live Demo
                 </motion.a>
               ) : (
-                <div className="flex-1 flex items-center justify-center gap-2 bg-[#1a1616] text-[#9a8f8f] py-3.5 rounded-2xl font-semibold border border-[#2a2424]">
+                <div className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-2xl font-semibold border"
+                  style={{
+                    backgroundColor: '#0A0A0F',
+                    color: '#6B7280',
+                    borderColor: 'rgba(255,255,255,0.05)'
+                  }}
+                >
                   <FiExternalLink />
                   Backend API Only
                 </div>
@@ -421,13 +465,24 @@ const Projects = ({ setActiveSection }) => {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#1a1616] text-[#d4cccc] py-3.5 rounded-2xl font-semibold border border-[#2a2424] hover:border-[#6d4aff] hover:text-white transition-all duration-300"
+                  className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-2xl font-semibold border transition-all duration-300"
+                  style={{
+                    backgroundColor: '#0A0A0F',
+                    color: '#D1D5DB',
+                    borderColor: 'rgba(255,255,255,0.05)'
+                  }}
                 >
                   <FiGithub />
                   Source Code
                 </motion.a>
               ) : (
-                <div className="flex-1 flex items-center justify-center gap-2 bg-[#1a1616] text-[#9a8f8f] py-3.5 rounded-2xl font-semibold border border-[#2a2424]">
+                <div className="flex-1 flex items-center justify-center gap-2 py-3.5 rounded-2xl font-semibold border"
+                  style={{
+                    backgroundColor: '#0A0A0F',
+                    color: '#6B7280',
+                    borderColor: 'rgba(255,255,255,0.05)'
+                  }}
+                >
                   <FiGithub />
                   Private Repository
                 </div>
@@ -439,6 +494,7 @@ const Projects = ({ setActiveSection }) => {
     );
   };
 
+  // 3D Background Effect
   useEffect(() => {
     if (!canvasRef.current) return;
 
@@ -461,10 +517,10 @@ const Projects = ({ setActiveSection }) => {
     ];
 
     const materials = [
-      new THREE.MeshPhongMaterial({ color: 0x8b5cf6, transparent: true, opacity: 0.08, specular: 0xffffff, shininess: 100 }),
-      new THREE.MeshPhongMaterial({ color: 0x6366f1, transparent: true, opacity: 0.06, specular: 0xffffff, shininess: 100 }),
-      new THREE.MeshPhongMaterial({ color: 0xec4899, transparent: true, opacity: 0.05, specular: 0xffffff, shininess: 100 }),
-      new THREE.MeshPhongMaterial({ color: 0x06b6d4, transparent: true, opacity: 0.06, specular: 0xffffff, shininess: 100 })
+      new THREE.MeshPhongMaterial({ color: 0xA855F7, transparent: true, opacity: 0.06 }),
+      new THREE.MeshPhongMaterial({ color: 0x8B5CF6, transparent: true, opacity: 0.05 }),
+      new THREE.MeshPhongMaterial({ color: 0x7C3AED, transparent: true, opacity: 0.06 }),
+      new THREE.MeshPhongMaterial({ color: 0x6D28D9, transparent: true, opacity: 0.05 })
     ];
 
     const objects = [];
@@ -504,7 +560,7 @@ const Projects = ({ setActiveSection }) => {
     const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const directionalLight = new THREE.DirectionalLight(0xA855F7, 0.5);
     directionalLight.position.set(5, 5, 5);
     scene.add(directionalLight);
 
@@ -551,8 +607,6 @@ const Projects = ({ setActiveSection }) => {
     return () => {
       window.removeEventListener('resize', handleResize);
       renderer.dispose();
-      geometries.forEach(geo => geo.dispose());
-      materials.forEach(mat => mat.dispose());
     };
   }, []);
 
@@ -572,10 +626,18 @@ const Projects = ({ setActiveSection }) => {
   };
 
   return (
-    <section id="projects" className="min-h-screen py-20 bg-[#0a0909] relative overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40"></div>
+    <section id="projects" className="min-h-screen py-20 relative overflow-hidden" style={{ backgroundColor: '#0A0A0F' }}>
+      {/* 3D Background */}
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none opacity-30" />
       
+      {/* Gradient Overlays */}
+      <div className="absolute inset-0" style={{
+        background: 'radial-gradient(circle at 20% 30%, rgba(168,85,247,0.03), transparent 50%)'
+      }} />
+      <div className="absolute inset-0" style={{
+        background: 'radial-gradient(circle at 80% 70%, rgba(168,85,247,0.03), transparent 50%)'
+      }} />
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <motion.div
           ref={ref}
@@ -583,78 +645,93 @@ const Projects = ({ setActiveSection }) => {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          {/* Premium Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <div className="inline-block mb-6">
-              <div className="relative">
-                <div className="absolute -inset-6 bg-[#6d4aff] blur-3xl opacity-10"></div>
-                <div className="relative">
-                  <div className="flex items-center justify-center gap-4 mb-4">
-                    <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#6d4aff]"></div>
-                    <span className="text-[#6d4aff] text-sm font-semibold tracking-widest uppercase">Portfolio</span>
-                    <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#6d4aff]"></div>
-                  </div>
-                  <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
-                    <span className="text-white">Featured</span>
-                    <span className="text-[#b78aff] ml-4">Projects</span>
-                  </h2>
-                  <p className="text-[#9a8f8f] mt-4 text-lg">
-                    {allProjects.length} innovative solutions • {filteredProjects.length} currently showing
-                  </p>
-                </div>
-              </div>
+          {/* Header */}
+          <motion.div variants={itemVariants} className="text-center mb-12">
+            <div className="inline-flex items-center px-6 py-3 rounded-2xl border mb-6"
+              style={{
+                backgroundColor: '#1A1A2E',
+                borderColor: 'rgba(255,255,255,0.05)'
+              }}
+            >
+              <div className="w-2.5 h-2.5 rounded-full mr-3 animate-pulse" style={{ backgroundColor: '#A855F7' }} />
+              <h1 className="text-2xl md:text-5xl font-bold text-white nav">
+                Featured Projects
+              </h1>
+              <div className="w-2.5 h-2.5 rounded-full ml-3 animate-pulse" style={{ backgroundColor: '#A855F7' }} />
             </div>
+            <p className="text-gray-200 text-sm text">
+              {allProjects.length} innovative solutions • {filteredProjects.length} currently showing
+            </p>
+          </motion.div>
 
-            {/* View Mode Toggle */}
-            <motion.div 
-              className="inline-flex items-center bg-[#141212] rounded-2xl p-1.5 border border-[#2a2424] mb-8 shadow-xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+          {/* View Mode Toggle */}
+          <motion.div 
+            className="flex justify-center mb-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="inline-flex rounded-xl p-1 border content"
+              style={{
+                backgroundColor: '#1A1A2E',
+                borderColor: 'rgba(255,255,255,0.05)'
+              }}
             >
               <button
                 onClick={() => setViewMode('grid')}
-                className={`px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium ${
+                className={`px-5 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 text-sm font-medium ${
                   viewMode === 'grid' 
-                    ? 'bg-[#6d4aff] text-white shadow-lg' 
-                    : 'text-[#9a8f8f] hover:text-white hover:bg-[#2a2424]'
+                    ? 'text-white' 
+                    : 'text-gray-400 hover:text-white'
                 }`}
+                style={{
+                  backgroundColor: viewMode === 'grid' ? '#A855F7' : 'transparent'
+                }}
               >
                 <FiCode className="w-4 h-4" />
                 Grid
               </button>
               <button
                 onClick={() => setViewMode('detailed')}
-                className={`px-6 py-2.5 rounded-xl transition-all duration-300 flex items-center gap-2 text-sm font-medium ${
+                className={`px-5 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 text-sm font-medium ${
                   viewMode === 'detailed' 
-                    ? 'bg-[#6d4aff] text-white shadow-lg' 
-                    : 'text-[#9a8f8f] hover:text-white hover:bg-[#2a2424]'
+                    ? 'text-white' 
+                    : 'text-gray-400 hover:text-white'
                 }`}
+                style={{
+                  backgroundColor: viewMode === 'detailed' ? '#A855F7' : 'transparent'
+                }}
               >
                 <FiZap className="w-4 h-4" />
                 Detailed
               </button>
-            </motion.div>
+            </div>
           </motion.div>
           
           {/* Category Filters */}
-          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-2 mb-12">
+          <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-2 mb-10">
             {categories.map(category => (
               <motion.button
                 key={category.id}
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveCategory(category.id)}
-                className={`group relative px-5 py-2.5 rounded-xl transition-all duration-300 font-medium flex items-center gap-2.5 text-sm ${
+                className={`group relative px-4 py-2 rounded-xl transition-all duration-300 font-medium flex items-center gap-2 text-sm ${
                   activeCategory === category.id
-                    ? 'bg-[#6d4aff] text-white shadow-lg shadow-[#6d4aff]/20'
-                    : 'bg-[#141212] text-[#9a8f8f] hover:bg-[#2a2424] hover:text-white border border-[#2a2424]'
+                    ? 'text-white'
+                    : 'text-gray-400 hover:text-white'
                 }`}
+                style={{
+                  backgroundColor: activeCategory === category.id ? '#A855F7' : '#1A1A2E',
+                  border: activeCategory === category.id ? 'none' : '1px solid rgba(255,255,255,0.05)'
+                }}
               >
                 <span className="text-base">{category.icon}</span>
-                <span>{category.name}</span>
+                <span className='blog text-gray-200 font-bold'>{category.name}</span>
                 <span className={`text-xs px-2 py-0.5 rounded-full ${
-                  activeCategory === category.id ? 'bg-white/20 text-white' : 'bg-[#2a2424] text-[#6a5f5f]'
+                  activeCategory === category.id 
+                    ? 'bg-white/20 text-white' 
+                    : 'bg-[#0A0A0F] text-gray-100'
                 }`}>
                   {category.count}
                 </span>
@@ -684,103 +761,117 @@ const Projects = ({ setActiveSection }) => {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
-                    whileHover={{ y: -6 }}
+                    whileHover={{ y: -4 }}
                     className="group relative cursor-pointer"
                     onClick={() => setSelectedProject(project)}
                   >
-                    {/* Premium Card - New Pattern */}
-                    <div className="relative bg-[#111010] rounded-2xl border border-[#2a2424] overflow-hidden transition-all duration-500 hover:border-[#6d4aff]/40 hover:shadow-2xl hover:shadow-[#6d4aff]/5">
+                    <div className="relative rounded-2xl border overflow-hidden transition-all duration-300 hover:border-purple-400/30"
+                      style={{
+                        backgroundColor: '#1A1A2E',
+                        borderColor: 'rgba(255,255,255,0.05)'
+                      }}
+                    >
+                      {/* Top Accent Line */}
+                      <div className="h-0.5 w-full transition-opacity duration-300"
+                        style={{
+                          backgroundColor: '#A855F7',
+                          opacity: 0
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+                        onMouseLeave={(e) => e.currentTarget.style.opacity = '0'}
+                      />
                       
-                      {/* Top Gradient Line */}
-                      <div className="h-0.5 w-full bg-gradient-to-r from-[#6d4aff] via-[#b78aff] to-[#6d4aff] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      
-                      {/* Image with Overlay Pattern */}
-                      <div className="relative h-52 overflow-hidden">
+                      {/* Image */}
+                      <div className="relative h-48 overflow-hidden">
                         <img
                           src={projectThumbnails[project.id]}
                           alt={project.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
                         
                         {/* Status Badge */}
-                        <div className="absolute top-4 right-4">
-                          <span className={`px-3 py-1.5 rounded-xl text-xs font-semibold backdrop-blur-sm border ${
-                            project.status === 'Live' ? 'bg-emerald-900/60 text-emerald-300 border-emerald-700/30' :
-                            project.status === 'Beta' ? 'bg-amber-900/60 text-amber-300 border-amber-700/30' :
-                            project.status === 'Development' ? 'bg-blue-900/60 text-blue-300 border-blue-700/30' :
-                            'bg-gray-800/60 text-gray-300 border-gray-700/30'
-                          }`}>
+                        <div className="absolute top-3 right-3">
+                          <span className="px-2.5 py-1 rounded-lg text-xs font-semibold backdrop-blur-sm"
+                            style={{
+                              backgroundColor: project.status === 'Live' ? 'rgba(16,185,129,0.2)' : 'rgba(59,130,246,0.2)',
+                              color: project.status === 'Live' ? '#34D399' : '#60A5FA',
+                              border: `1px solid ${project.status === 'Live' ? 'rgba(16,185,129,0.2)' : 'rgba(59,130,246,0.2)'}`
+                            }}
+                          >
                             {project.status}
                           </span>
                         </div>
                         
                         {/* Icon */}
-                        <div className="absolute bottom-4 left-4">
-                          <div className="p-2.5 bg-[#111010]/90 backdrop-blur-sm rounded-xl border border-[#2a2424]">
+                        <div className="absolute bottom-3 left-3">
+                          <div className="p-2 rounded-xl backdrop-blur-sm border"
+                            style={{
+                              backgroundColor: 'rgba(26,26,46,0.8)',
+                              borderColor: 'rgba(255,255,255,0.05)'
+                            }}
+                          >
                             {project.icon}
                           </div>
                         </div>
                       </div>
                       
                       {/* Content */}
-                      <div className="p-5">
-                        <div className="flex items-start justify-between mb-2">
-                          <h3 className="text-lg font-bold text-white group-hover:text-[#b78aff] transition-colors duration-300 line-clamp-1 tracking-tight">
-                            {project.title}
-                          </h3>
-                        </div>
+                      <div className="p-4">
+                        <h3 className="text-base text font-bold text-white group-hover:text-purple-400 transition-colors duration-300 line-clamp-1">
+                          {project.title}
+                        </h3>
                         
-                        <p className="text-gray-300 text-sm leading-relaxed line-clamp-2 mb-3.5">
+                        <p className="text-gray-200 text-xs blog leading-relaxed line-clamp-2 my-2">
                           {project.shortDescription}
                         </p>
                         
                         {/* Tech Stack */}
-                        <div className="flex flex-wrap gap-1.5 mb-3.5">
+                        <div className="flex flex-wrap gap-1 mb-3">
                           {project.technologies.slice(0, 3).map((tech, idx) => (
                             <span
                               key={idx}
-                              className="px-2.5 py-1 bg-[#1a1616] rounded-lg text-xs text-[#d4cccc] border border-[#2a2424]"
+                              className="px-2 py-0.5 rounded-lg text-[10px]"
+                              style={{
+                                backgroundColor: 'rgba(168,85,247,0.1)',
+                                color: '#A855F7'
+                              }}
                             >
                               {tech}
                             </span>
                           ))}
                           {project.technologies.length > 3 && (
-                            <span className="px-2.5 py-1 bg-[#1a1616] rounded-lg text-xs text-[#6a5f5f] border border-[#2a2424]">
+                            <span className="px-2 py-0.5 rounded-lg text-[10px]"
+                              style={{
+                                backgroundColor: '#0A0A0F',
+                                color: '#6B7280'
+                              }}
+                            >
                               +{project.technologies.length - 3}
                             </span>
                           )}
                         </div>
                         
-                        {/* Stats with Icons */}
-                        {project.stats && (
-                          <div className="flex items-center gap-4 mb-3.5 text-xs">
-                            {Object.entries(project.stats).slice(0, 2).map(([key, value]) => (
-                              <div key={key} className="flex items-center gap-1.5">
-                                <span className="text-[#6d4aff] font-semibold">{value}</span>
-                                <span className="text-[#6a5f5f] capitalize">{key}</span>
-                              </div>
-                            ))}
+                        {/* Completion */}
+                        <div className="mb-3">
+                          <div className="flex justify-between text-[10px] mb-1">
+                            <span  className='text-gray-100'>Completion</span>
+                            <span className="font-semibold" style={{ color: '#A855F7' }}>{project.completion}</span>
                           </div>
-                        )}
-                        
-                        {/* Progress */}
-                        <div className="mb-3.5">
-                          <div className="flex justify-between text-xs mb-1.5">
-                            <span className="text-gray-50">Completion</span>
-                            <span className="font-semibold text-white">{project.completion}</span>
-                          </div>
-                          <div className="w-full h-1 bg-[#1a1616] rounded-full overflow-hidden">
+                          <div className="w-full h-1 rounded-full overflow-hidden"
+                            style={{ backgroundColor: '#0A0A0F' }}
+                          >
                             <motion.div
                               initial={{ width: 0 }}
                               animate={{ width: project.completion }}
                               transition={{ duration: 1, delay: index * 0.1 }}
-                              className="h-full rounded-full bg-gradient-to-r from-[#6d4aff] to-[#b78aff]"
-                            ></motion.div>
+                              className="h-full rounded-full"
+                              style={{ backgroundColor: '#A855F7' }}
+                            />
                           </div>
                         </div>
                         
                         {/* Actions */}
-                        <div className="flex gap-2">
+                        <div className="flex gap-5">
                           <motion.button
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
@@ -788,7 +879,8 @@ const Projects = ({ setActiveSection }) => {
                               e.stopPropagation();
                               setSelectedProject(project);
                             }}
-                            className="flex-1 bg-[#6d4aff] text-white py-2.5 rounded-xl font-medium text-sm hover:bg-[#5a3ddb] transition-all duration-300"
+                            className="flex-1 text-white py-1 rounded-xl font-medium text-xs transition-all duration-300"
+                            style={{ backgroundColor: '#A855F7' }}
                           >
                             Explore
                           </motion.button>
@@ -801,13 +893,24 @@ const Projects = ({ setActiveSection }) => {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="flex items-center justify-center w-10 h-10 bg-[#1a1616] text-[#d4cccc] rounded-xl border border-[#2a2424] hover:border-[#6d4aff] hover:text-white transition-all duration-300"
+                              className="flex items-center justify-center w-8 h-8 rounded-xl border transition-all duration-300"
+                              style={{
+                                backgroundColor: '#0A0A0F',
+                                color: '#9CA3AF',
+                                borderColor: 'rgba(255,255,255,0.05)'
+                              }}
                             >
-                              <RiExternalLinkLine className="w-4 h-4" />
+                              <RiExternalLinkLine className="w-8 h-8" />
                             </motion.a>
                           ) : (
-                            <div className="flex items-center justify-center w-10 h-10 bg-[#1a1616] text-[#4a3f3f] rounded-xl border border-[#2a2424] cursor-default">
-                              <RiExternalLinkLine className="w-4 h-4" />
+                            <div className="flex items-center justify-center w-8 h-8 rounded-xl border cursor-default"
+                              style={{
+                                backgroundColor: '#0A0A0F',
+                                color: '#4B5563',
+                                borderColor: 'rgba(255,255,255,0.05)'
+                              }}
+                            >
+                              <RiExternalLinkLine className="w-8 h-8" />
                             </div>
                           )}
                           
@@ -819,21 +922,28 @@ const Projects = ({ setActiveSection }) => {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="flex items-center justify-center w-10 h-10 bg-[#1a1616] text-[#d4cccc] rounded-xl border border-[#2a2424] hover:border-[#6d4aff] hover:text-white transition-all duration-300"
+                              className="flex items-center justify-center w-8 h-8 rounded-xl border transition-all duration-300"
+                              style={{
+                                backgroundColor: '#0A0A0F',
+                                color: '#9CA3AF',
+                                borderColor: 'rgba(255,255,255,0.05)'
+                              }}
                             >
-                              <FiGithub className="w-4 h-4" />
+                              <FiGithub className="w-8 h-8" />
                             </motion.a>
                           ) : (
-                            <div className="flex items-center justify-center w-10 h-10 bg-[#1a1616] text-[#4a3f3f] rounded-xl border border-[#2a2424] cursor-default">
-                              <FiGithub className="w-4 h-4" />
+                            <div className="flex items-center justify-center w-8 h-8 rounded-xl border cursor-default"
+                              style={{
+                                backgroundColor: '#0A0A0F',
+                                color: '#4B5563',
+                                borderColor: 'rgba(255,255,255,0.05)'
+                              }}
+                            >
+                              <FiGithub className="w-8 h-8" />
                             </div>
                           )}
                         </div>
                       </div>
-                      
-                      {/* Corner Accents */}
-                      <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-[#6d4aff]/20 rounded-tl-2xl"></div>
-                      <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#b78aff]/20 rounded-br-2xl"></div>
                     </div>
                   </motion.div>
                 );
@@ -848,18 +958,24 @@ const Projects = ({ setActiveSection }) => {
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-20"
             >
-              <div className="w-32 h-32 mx-auto mb-8 bg-[#141212] rounded-full flex items-center justify-center border border-[#2a2424]">
-                <div className="text-6xl">✦</div>
+              <div className="w-24 h-24 mx-auto mb-6 rounded-full flex items-center justify-center border"
+                style={{
+                  backgroundColor: '#1A1A2E',
+                  borderColor: 'rgba(255,255,255,0.05)'
+                }}
+              >
+                <span className="text-4xl" style={{ color: '#A855F7' }}>✦</span>
               </div>
-              <h3 className="text-3xl font-bold text-[#d4cccc] mb-4">No Projects Found</h3>
-              <p className="text-[#9a8f8f] mb-8 max-w-md mx-auto">
+              <h3 className="text-2xl font-bold text-white mb-2">No Projects Found</h3>
+              <p className="text-gray-400 mb-6 max-w-md mx-auto text-sm">
                 No projects match your selected category. Try adjusting your filter.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveCategory('all')}
-                className="px-8 py-3 bg-[#6d4aff] rounded-2xl font-semibold text-white shadow-lg hover:bg-[#5a3ddb] transition-all duration-300"
+                className="px-6 py-2.5 text-white rounded-xl font-semibold transition-all duration-300 text-sm"
+                style={{ backgroundColor: '#A855F7' }}
               >
                 View All Projects
               </motion.button>
@@ -877,6 +993,23 @@ const Projects = ({ setActiveSection }) => {
           />
         )}
       </AnimatePresence>
+
+      <style jsx global>{`
+        ::-webkit-scrollbar {
+          width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+          background: rgba(26, 26, 46, 0.4);
+          border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #A855F7;
+          border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #8B5CF6;
+        }
+      `}</style>
     </section>
   );
 };
