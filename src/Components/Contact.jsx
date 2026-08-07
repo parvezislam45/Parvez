@@ -217,31 +217,34 @@ const PremiumContact = () => {
         <div className="max-w-4xl mx-auto px-4">
           {/* Header - Minimal */}
           <motion.div
-          className="text-center mb-16 relative"
-          Discover how innovative solutions transformed businesses across industries
-        >
-          <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#06B6D4] opacity-10 rounded-full blur-3xl" />
-          <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#8B5CF6] opacity-10 rounded-full blur-3xl translate-x-40" />
+            className="text-center mb-16 relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#06B6D4] opacity-10 rounded-full blur-3xl" />
+            <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-[#8B5CF6] opacity-10 rounded-full blur-3xl translate-x-40" />
 
-          <div className="relative">
-            <div className="text-center mb-20">
-              <div className="inline-flex items-center px-8 py-4 backdrop-blur-2xl rounded-2xl border mb-8"
-                style={{
-                  backgroundColor: "#1A1A2E",
-                  borderColor: "rgba(255,255,255,0.05)"
-                }}>
-                <div className="w-3 h-3 rounded-full mr-4 animate-pulse" style={{ backgroundColor: "#6366F1" }} />
-                <h1 className="text-3xl md:text-4xl font-bold text-white nav">
-                  Get in Touch
-                </h1>
-                <div className="w-3 h-3 rounded-full ml-4 animate-pulse" style={{ backgroundColor: "#10B981" }} />
+            <div className="relative">
+              <div className="text-center mb-20">
+                <div className="inline-flex items-center px-8 py-4 backdrop-blur-2xl rounded-2xl border mb-8"
+                  style={{
+                    backgroundColor: "#1A1A2E",
+                    borderColor: "rgba(255,255,255,0.05)"
+                  }}>
+                  <div className="w-3 h-3 rounded-full mr-4 animate-pulse" style={{ backgroundColor: "#6366F1" }} />
+                  <h1 className="text-3xl md:text-4xl font-bold text-white nav">
+                    Get in Touch
+                  </h1>
+                  <div className="w-3 h-3 rounded-full ml-4 animate-pulse" style={{ backgroundColor: "#10B981" }} />
+                </div>
+                <p className="text-gray-200 text-sm max-w-4xl mx-auto mb-8 text">
+                  Let's discuss your project and bring your ideas to life
+                </p>
               </div>
-              <p className="text-gray-200 text-sm max-w-4xl mx-auto mb-8 text">
-                Let's discuss your project and bring your ideas to life
-              </p>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+
           {/* Contact Form - Compact */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}

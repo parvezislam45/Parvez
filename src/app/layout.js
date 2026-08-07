@@ -20,19 +20,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossorigin
-        ></link>
+          crossOrigin="anonymous"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Gloock&display=swap"
           rel="stylesheet"
-        ></link>
-        <link href="https://fonts.googleapis.com/css2?family=Bigshot+One&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap" rel="stylesheet"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&family=DM+Serif+Display:ital@0;1&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
+        />
+        <link 
+  href="https://fonts.googleapis.com/css2?family=Gloock&family=Bigshot+One&family=Bilbo+Swash+Caps&family=DM+Serif+Display:ital@0;1&family=Libre+Baskerville:wght@400;700&family=Noto+Serif:wght@100..900&display=swap" 
+  rel="stylesheet" 
+/>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
